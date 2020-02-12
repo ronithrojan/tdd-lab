@@ -44,18 +44,16 @@ class ChangeHandler {
     while (this.cashTendered > this.amountDue) {
       if (this.cashTendered - this.amountDue >= 25) {
         this.cashTendered -= 25;
-        changeDue.quarters += 1;
-      }
-      if (this.cashTendered - this.amountDue >= 10) {
+        changeDue.quarters++;
+      } else if (this.cashTendered - this.amountDue >= 10) {
         this.cashTendered -= 10;
-        changeDue.dimes += 1;
-      }
-      if (this.cashTendered - this.amountDue >= 5) {
+        changeDue.dimes++;
+      } else if (this.cashTendered - this.amountDue >= 5) {
         this.cashTendered -= 5;
-        changeDue.nickels += 1;
+        changeDue.nickels++;
       } else {
         this.cashTendered -= 1;
-        changeDue.pennies += 1;
+        changeDue.pennies++;
       }
     }
     return changeDue;
